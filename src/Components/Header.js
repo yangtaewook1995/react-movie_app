@@ -2,6 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
+// style
 const Header = styled.header`
   color: white;
   position: fixed;
@@ -35,6 +36,8 @@ const SLink = styled(Link)`
   justify-content: center;
 `;
 
+// main
+// 5bffb8ca99dbfae576ba658a895078ee
 const HeaderC = ({ location: { pathname } }) => {
   return (
     <Header>
