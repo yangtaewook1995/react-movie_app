@@ -13,7 +13,7 @@ class SearchContainer extends React.Component {
 
   handleSubmit = () => {
     const { searchTerm } = this.state;
-    if (searchTerm != "") this.searchByTerm(searchTerm);
+    if (searchTerm !== "") this.searchByTerm(searchTerm);
   };
 
   searchByTerm = async () => {

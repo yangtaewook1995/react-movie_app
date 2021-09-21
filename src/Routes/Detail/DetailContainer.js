@@ -8,9 +8,22 @@ class DetailContainer extends React.Component {
     error: null,
   };
 
+  componentDidMount() {
+    const {
+      match: {
+        params: { id },
+      },
+      history: { push },
+    } = this.props;
+
+    const parsedId = Number(id);
+    if (isNaN(parsedId)) {
+      return push("/");
+    }
+  }
+
   render() {
     const { result, loading, error } = this.state;
-
     return (
       <DetailPresenter
         result={result}
