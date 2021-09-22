@@ -1,4 +1,8 @@
-function TV() {
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+
+function TVPresenter({ topRated, popular, airingToday, error, loading }) {
   return (
     <div>
       <span>TV</span>
@@ -6,4 +10,12 @@ function TV() {
   );
 }
 
-export default TV;
+TVPresenter.propTypes = {
+  topRated: PropTypes.array,
+  popular: PropTypes.array,
+  airingToday: PropTypes.array,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.string,
+};
+
+export default TVPresenter;
