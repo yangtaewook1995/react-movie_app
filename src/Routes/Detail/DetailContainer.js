@@ -38,7 +38,6 @@ class DetailContainer extends React.Component {
         result: result,
       });
     }
-    console.log(result);
   }
 
   render() {
