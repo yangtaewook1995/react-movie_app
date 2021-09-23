@@ -5,6 +5,7 @@ import Section from "../../Components/Section";
 import Loader from "Components/Loader";
 import Error from "Components/Message";
 import Poster from "Components/Poster";
+import Helmet from "react-helmet";
 
 const Container = styled.div`
   padding: 20px;
@@ -15,6 +16,9 @@ function HomePresenter({ nowPlaying, popular, upcoming, error, loading }) {
     <Loader></Loader>
   ) : (
     <Container>
+      <Helmet>
+        <title>Movies | Netflix</title>
+      </Helmet>
       {nowPlaying && nowPlaying.length > 0 && (
         <Section title="Now Playing">
           {nowPlaying.map((movie) => (
