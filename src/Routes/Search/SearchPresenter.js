@@ -50,7 +50,7 @@ function SearchPresenter({
                 return (
                   <Poster
                     title={movie.original_title}
-                    imageUrl={movie.poster_payth}
+                    imageUrl={movie.poster_path}
                     key={movie.id}
                     id={movie.id}
                     isMovie={true}
