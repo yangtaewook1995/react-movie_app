@@ -9,3 +9,9 @@ API from : https://www.themoviedb.org
 - TV Shows
 - Search
 - Detail
+
+## TODO
+
+- Youtube
+- Company
+- IMDB Link

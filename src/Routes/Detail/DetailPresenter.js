@@ -9,6 +9,7 @@ import Helmet from "react-helmet";
 // youtube video 추가
 // IMDB 링크 (id로)
 // 영화사
+// 나라
 
 const Container = styled.div`
   height: calc(100vh - 50px);
