@@ -20,7 +20,7 @@ function HomePresenter({ nowPlaying, popular, upcoming, error, loading }) {
           {nowPlaying.map((movie) => (
             <Poster
               title={movie.original_title}
-              imageUrl={movie.poster_payth}
+              imageUrl={movie.poster_path}
               key={movie.id}
               id={movie.id}
               isMovie={true}
@@ -38,7 +38,7 @@ function HomePresenter({ nowPlaying, popular, upcoming, error, loading }) {
           {upcoming.map((movie) => (
             <Poster
               title={movie.original_title}
-              imageUrl={movie.poster_payth}
+              imageUrl={movie.poster_path}
               key={movie.id}
               id={movie.id}
               isMovie={true}
