@@ -26,7 +26,6 @@
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
   },
-  "homepage": "https://yangtaewook1995@github.io/react-movie-app",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -44,5 +43,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://yangtaewook1995.github.io/react-movie_app/"
+
 }
