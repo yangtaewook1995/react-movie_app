@@ -7,6 +7,7 @@ class DetailContainer extends React.Component {
     result: null,
     loading: true,
     error: null,
+    videoLink: null,
   };
 
   async componentDidMount() {
@@ -38,15 +39,32 @@ class DetailContainer extends React.Component {
         result: result,
       });
     }
-  }
 
+    const {
+      data: { results: videoArr },
+    } = await movieApi.videos(parsedId);
+
+    const parsedVideo = videoArr
+      .map((video) => {
+        return video.key;
+      })
+      .map((parsed) => {
+        return `https://youtube.com/watch?v=${parsed}`;
+      });
+
+    this.setState({
+      videoLink:
+        parsedVideo.length > 10 ? parsedVideo.slice(0, 10) : parsedVideo,
+    });
+  }
   render() {
-    const { result, loading, error } = this.state;
+    const { result, loading, error, videoLink } = this.state;
     return (
       <DetailPresenter
         result={result}
         error={error}
         loading={loading}
+        videoLink={videoLink}
       ></DetailPresenter>
     );
   }

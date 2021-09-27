@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Loader from "Components/Loader";
 import noPoster from "../../asset/noPosterSmall.png";
 import Helmet from "react-helmet";
+import { Link } from "react-router-dom";
+import youtube from "../../asset/youtube.jpeg";
 
 //ToDo
 // youtube video 추가
@@ -73,7 +75,25 @@ const Overview = styled.p`
   width: 50%;
 `;
 
-function DetailPresenter({ result, error, loading }) {
+const Youtube = styled.div`
+  margin-top: 30px;
+`;
+
+const YoutubeItem = styled.div`
+  display: flex;
+  margin-bottom: 5px;
+`;
+
+const YoutubeLogo = styled.div`
+  background-image: url(${(props) => props.bgUrl});
+  height: 15px;
+  width: 15px;
+  background-size: cover;
+  margin-right: 3px;
+  background-position: center center;
+`;
+
+function DetailPresenter({ result, error, loading, videoLink }) {
   return loading ? (
     <>
       <Helmet>
@@ -127,6 +147,21 @@ function DetailPresenter({ result, error, loading }) {
             </Item>
           </ItemContainer>
           <Overview>{result.overview}</Overview>
+          <Youtube>
+            <ul>
+              {videoLink &&
+                videoLink.map((val, idx) => (
+                  <li key={val}>
+                    <a href={val}>
+                      <YoutubeItem>
+                        <YoutubeLogo bgUrl={`${youtube}`} />
+                        <YoutubeItem>Official Video {idx + 1}</YoutubeItem>
+                      </YoutubeItem>
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </Youtube>
         </Data>
       </Content>
     </Container>
@@ -137,6 +172,7 @@ DetailPresenter.propTypes = {
   result: PropTypes.object,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string,
+  videoLink: PropTypes.array,
 };
 
 export default DetailPresenter;
